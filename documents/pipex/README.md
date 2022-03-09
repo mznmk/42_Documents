@@ -24,6 +24,9 @@ Pipex now exists as Cursus 1stCircle Level2 Project
 
 ## Wiki
 
+何をすればいいの？  
 [what to do?](./what_to_do.md)  
+
+必要な知識  
 [knowledge](./knowledge.md)  
 
