@@ -34,8 +34,8 @@
 |:-----:|:---:|:------:|:------:|:--:|
 |ft_server|Level2(old)|Shell/Docker|[public](https://github.com/mznmk/ft_server)|-|
 |push_swap|Level2|C|[public](https://github.com/mznmk/push_swap)|-|
-|minitalk|Level2|C|[public](https://github.com/mznmk/minitalk)|[wiki](https://github.com/mznmk/minitalk/wiki)|
-|pipex|Level2|C|[public](https://github.com/mznmk/pipex)|[wiki](./wiki/pipex/)|
+|minitalk|Level2|C|[public](https://github.com/mznmk/minitalk)|[wiki](./documents/minitalk/)|
+|pipex|Level2|C|[public](https://github.com/mznmk/pipex)|[wiki](./documents/pipex/)|
 |so_long|Level2|C|-|-|
 |fdf|Level2|C|-|-|
 |fract-ol|Level2|C|-|-|
@@ -70,17 +70,17 @@ Other Projects
 
 |Project|Level|Language|Reposity|Wiki|
 |:-----:|:---:|:------:|:------:|:--:|
-|Fillit|BasicBranch|C|[Repository](https://github.com/mznmk/Fillit)|-|
+|Fillit|BasicBranch|C|[public](https://github.com/mznmk/Fillit)|-|
 |Filler|AlgorithmBranch|C|-|-|
-|Pisine_CPP|OOP Branch|C++|[Repository](https://github.com/mznmk/Piscine_CPP)|-|
+|Pisine_CPP|OOP Branch|C++|[public](https://github.com/mznmk/Piscine_CPP)|-|
 
 Reloaded
 
 |Project|Level|Language|Reposity|Wiki|
 |:-----:|:---:|:------:|:------:|:--:|
-|hello_node|Reloaded|JS|[Repository](https://github.com/mznmk/hello_node)|-|
-|hello_vue|Reloaded|JS|[Repository](https://github.com/mznmk/hello_vue)|-|
-|libunit|Reloaded|C|[Repository](https://github.com/mznmk/libunit)|-|
+|hello_node|Reloaded|JS|[public](https://github.com/mznmk/hello_node)|-|
+|hello_vue|Reloaded|JS|[public](https://github.com/mznmk/hello_vue)|-|
+|libunit|Reloaded|C|[public](https://github.com/mznmk/libunit)|-|
 
 
 ## 42 Subjects
