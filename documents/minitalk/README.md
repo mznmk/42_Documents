@@ -18,12 +18,14 @@ Minitalk now exists as Cursus 1stCircle Level2 Project
 
 ## Repository
 
-[public](https://github.com/mznmk/minitalc)  
+[public](https://github.com/mznmk/minitalk)  
 
 
 ## Wiki
 
+何をすればいいの？  
 [what to do?](./what_to_do.md)  
-[knowledge](./knowledge.md)  
 
+必要な知識  
+[knowledge](./knowledge.md)  
 
