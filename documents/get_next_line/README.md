@@ -37,5 +37,5 @@ get_next_line exists Cursus 1stCircle Level1 Project.
 [knowledge](./knowledge.md)  
 
 実装内容について  
-[how_to_develop](./how_to_develop)  
+[how_to_develop](./how_to_develop.md)  
 
