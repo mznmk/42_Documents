@@ -84,7 +84,7 @@ char	*deallocate_memory(char **memory)
 実装例：  
 `*line` (１行分の文字列)に設定したポインターは、関数の処理終了後、値を失います。  
 `*buff` (バッファ文字列)に設定したポインターは、関数の処理の終了後も値を保持し続けます。次回呼び出し時、引き続き値の利用が可能です。  
-```
+```c
 char	*get_next_line(int fd)
 {
 	char		*line;
