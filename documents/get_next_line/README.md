@@ -36,6 +36,6 @@ get_next_line exists Cursus 1stCircle Level1 Project.
 必要な知識について  
 [knowledge](./knowledge.md)  
 
-実装方法について  
+実装内容について  
 [how_to_develop](./how_to_develop)  
 
