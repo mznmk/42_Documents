@@ -1,6 +1,7 @@
 # 何をやったらいいの？
 
-課題再挑戦時(2022/3)における理解をまとめた。  
+課題再挑戦時(2022/3)における理解をまとめました。  
+未提出なので間違いあるかもしれません。  
 
 
 ## 何をやったらいいの？
@@ -61,7 +62,7 @@ I have a dream today!
 	```
 	I have a dream that one day on the red hills of Georgia, the sons of former slaves and the sons of former slave owners will be able to sit down together at the table of brotherhood.<改行><改行>I have a 
 	```
-	改行が出てきたので、出力します。出力の内容は次のようになります。  
+	改行が含まれているので、切り出して出力します。出力の内容は次のようになります。  
 	```
 	I have a dream that one day on the red hills of Georgia, the sons of former slaves and the sons of former slave owners will be able to sit down together at the table of brotherhood.<改行>
 	```
@@ -74,7 +75,7 @@ I have a dream today!
 	```
 	<改行>I have a dream that one day even the stat
 	```
-	改行が出てきたので、出力します。出力の内容は次のようになります。  
+	改行が含まれているので、切り出して出力します。出力の内容は次のようになります。  
 	```
 	<改行>
 	```
