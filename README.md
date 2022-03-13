@@ -1,4 +1,4 @@
-# 42 Wiki
+# 42 Documents
 
 
 ## 42 Index (new curriculum)
@@ -24,7 +24,7 @@
 	|Project|Level|Language|Reposity|Wiki|Subject|
 	|:-----:|:---:|:------:|:------:|:--:|:-----:|
 	|Netwhat|Level1(old)|-|[public](https://github.com/mznmk/netwhat)|-|-|
-	|get_next_line|Level1|C|[public(Ver1)](https://github.com/mznmk/get_next_line)<br>[public(Ver2)](https://github.com/mznmk/get_next_line_2)|[public](https://github.com/mznmk/42_Documents/tree/master/documents/get_next_line)|[private](https://github.com/mznmk/42_Subjects/tree/master/subjects/get_next_line)|
+	|get_next_line|Level1|C|[public(Ver1)](https://github.com/mznmk/get_next_line)<br>[public(Ver2)](https://github.com/mznmk/get_next_line_2)|[public](./documents/get_next_line)|[private](https://github.com/mznmk/42_Subjects/tree/master/subjects/get_next_line)|
 	|ft_printf|Level1|C|[public](https://github.com/mznmk/ft_printf)|-|-|
 	|Born2BeRoot|Level1|Shell|-|-|-|
 
@@ -34,8 +34,8 @@
 	|:-----:|:---:|:------:|:------:|:--:|:-----:|
 	|ft_server|Level2(old)|Shell/Docker|[public](https://github.com/mznmk/ft_server)|-|-|
 	|push_swap|Level2|C|[public](https://github.com/mznmk/push_swap)|-|-|
-	|minitalk|Level2|C|[public](https://github.com/mznmk/minitalk)|[wiki](./documents/minitalk/)|[private](https://github.com/mznmk/42_Subjects/tree/master/subjects/minitalk)|
-	|pipex|Level2|C|[public](https://github.com/mznmk/pipex)|[wiki](./documents/pipex/)|[private](https://github.com/mznmk/42_Subjects/tree/master/subjects/pipex)|
+	|minitalk|Level2|C|[public](https://github.com/mznmk/minitalk)|[public](./documents/minitalk/)|[private](https://github.com/mznmk/42_Subjects/tree/master/subjects/minitalk)|
+	|pipex|Level2|C|[public](https://github.com/mznmk/pipex)|[public](./documents/pipex/)|[private](https://github.com/mznmk/42_Subjects/tree/master/subjects/pipex)|
 	|so_long|Level2|C|-|-|-|
 	|fdf|Level2|C|-|-|-|
 	|fract-ol|Level2|C|-|-|-|
@@ -78,7 +78,7 @@
 |:-----:|:---:|:------:|:------:|:--:|:-----:|
 |hello_node|Reloaded|JS|[public](https://github.com/mznmk/hello_node)|-|-|
 |hello_vue|Reloaded|JS|[public](https://github.com/mznmk/hello_vue)|-|-|
-|libunit|Reloaded|C|[public](https://github.com/mznmk/libunit)|-|-|
+|libunit|Reloaded|C|[public](https://github.com/mznmk/libunit)|[public](./documents/libunit/)|[private](https://github.com/mznmk/42_Subjects/tree/master/subjects/libunit)|
 
 
 ## 42 Index (old curriculum)
@@ -118,5 +118,8 @@
 
 |Project|Level|Language|Reposity|Wiki|Subject|
 |:-----:|:---:|:------:|:------:|:--:|:-----:|
+|minitalk|Rush|C|[public](https://github.com/mznmk/minitalk)|[public](./documents/minitalk/)|[private](https://github.com/mznmk/42_Subjects/tree/master/subjects/minitalk)|
+|pipex|Rush|C|[public](https://github.com/mznmk/pipex)|[public](./documents/pipex/)|[private](https://github.com/mznmk/42_Subjects/tree/master/subjects/pipex)|
+|libunit|Rush|C|[public](https://github.com/mznmk/libunit)|[public](./documents/libunit/)|[private](https://github.com/mznmk/42_Subjects/tree/master/subjects/libunit)|
 |||||||
 
