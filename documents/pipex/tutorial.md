@@ -4,11 +4,11 @@
 未提出なので間違いあるかもしれません。  
 
 
-## ちょっとずつ理解していきましょ？
+## ちょっとずつ大きくしていきましょ？
 
 ストリームを使ったプログラミングはとにかくややこしいです。  
 書いてるうちに、何と何をつないでるか、だんだんわからなくなってきます。  
-まず確実に動く小さなものを作って、それを徐々に大きくしていきましょう。  
+まず確実に動く小さなものを作って、それを徐々に大きくしていくのが良いです。  
 
 
 ## 入力元ファイル(infile.txt)
@@ -33,9 +33,14 @@ bb yy zz yy cc
 
 ## サンプルコード１(pipe==0; command==1;)
 
-最初に作るものは、「ファイルをコマンドの入力元に繋げてコマンドを実行する」だけのものです。  
-実行コマンドは`wc -w`で、ソースにベタ書きしてあります。  
-出力先は特に設定しないので、デフォルトである標準出力のままとなります。  
+最初に作るものは、本当にシンプルなものです。  
+プロセスの入力元にファイルを繋げ、コマンドを実行するだけのものです。  
+プロセスの出力先は変更していませんので、標準出力のままとなります。  
+
+実行コマンドはこちらです。  
+```sh
+./p0c1 files/infile.txt
+```
 次のコマンドと同じ挙動となります。  
 ```sh
 < files/infile.txt wc -w
@@ -45,40 +50,280 @@ bb yy zz yy cc
 ```c
 	// [ set stream ]
 	// open file: upstream-end
-	fd_read = open(argv[1], O_RDONLY,
-							S_IRWXU | S_IRWXG | S_IRWXO);	// (1)
+	fd_read = open(argv[1],	O_RDONLY,
+				S_IRWXU | S_IRWXG | S_IRWXO);	// (1)
 	// set stream: upstream-end
-	close(STDIN_FILENO);									// (2)
-	dup2(fd_read, STDIN_FILENO);							// (3)
-	close(fd_read);											// (4)
+	close(STDIN_FILENO);		// (2)
+	dup2(fd_read, STDIN_FILENO);		// (3)
+	close(fd_read);			// (4)
 	// set stream: downstream-end
 
 	// [ execute command ]
-	execlp("wc", "wc", "-w", NULL);							// (5)
+	execlp("wc", "wc", "-w", NULL);		// (5)
 ```
-※ ファイルディスクリプターは長いので、`FD`と略します。  
+※ ファイルディスクリプターは長いので、"FD"と略します。  
 ※ ファイルディスクリプターについてはこちら参照。→[what to do?](./what_to_do.md)  
 
 1. ファイルをオープンし、FDを取得します。（便宜的にFD==3とします）  
 2. FD==0（標準入力）をクローズします。  
-3. dup2で、FD==0としてFD==3を複製します。FD==0（標準入力）からファイルにアクセスできるようになります。  
-4. FD==3（fd_read）をクローズします。これでFD==0（標準入力）からだけファイルにアクセスできるようになります。  
+3. dup2で、FD==0としてFD==3を複製します。  
+	FD==0（標準入力）からファイルにアクセスできるようになります。  
+4. FD==3（`fd_read`）をクローズします。  
+	これでFD==0（標準入力）からだけファイルにアクセスできるようになります。  
 5. `wc -w`コマンドを実行します。  
-	コマンドは標準入力からデータを取得しようとしますが、FD==0がファイルにマッピングされているため、ファイルからデータを取得します。	出力先は変更してませんので、標準出力のままとなります。  
+	コマンドは標準入力からデータを取得しようとしますが、FD==0がファイルにマッピングされているため、ファイルからデータを取得します。出力先は変更していませんので、標準出力のままとなります。  
 	`files/infile.txt`は60単語なので、60と出力されるはずです。    
 
 
 ## サンプルコード２(pipe==1; command==2;)
 
+次にパイプを使った処理を行ってみます。  
+２つのプロセスを１本のパイプで繋げて、プロセス同士のデータのやり取りをします。コマンドの実行回数は２回です。  
+最初のプロセスの入力元にファイルを繋げ、出力先にはパイプの入口を繋ぎます。コマンドを実行すると、パイプを通じて実行結果を２番目のプロセスに流します。  
+２番目のプロセスの入力先にパイプの出口を繋ぎ、出力先にはファイルを繋ぎます。コマンドを実行すると、パイプを通じて最初のプロセスでの実行結果を受け取り、コマンドの実行結果をファイルに流します。  
+
+実行コマンドはこちらです。  
+```sh
+./p1c2 files/infile.txt files/outfile.txt
+```
+次のコマンドと同じ挙動となります。  
+```sh
+< files/infile.txt grep aa | wc -w > files/outfile.txt
+```
+
+[sample_pipe1_cmd2](https://github.com/mznmk/pipex/blob/master/srcs/sample_pipe1_cmd2.c?ts=4)  
+```c
+int
+main(int argc, char **argv, char **envp)
+{
+	// [ execute command ]
+	// create pipe
+	pipe(fd);		// (1)
+	// fork process
+	pid = fork();		// (2)
+	if (0 == pid)
+	{
+		child_process(argv, fd);	// (3)
+	}
+	else if (0 < pid)
+	{
+		waitpid(pid, NULL, 0);		// (4)
+		parent_process(argv, fd);	// (5)
+	}
+}
+```
+
+<プロセス１>  
+1. システムコール`pipe()`でパイプを作成します。プロセス同士でデータをやり取りするためです。  
+2. システムコール`fork()`でプロセスを複製します。  
+	親プロセス・子プロセスの２つになりますが、パイプは１本のままです。入口と出口がそれぞれ２つあって、親プロセス・子プロセス両方に繋がっている、不思議なパイプの状態になります。  
+	その状態で片方のプロセス側(A)のパイプの出口を閉じ、もう片方のプロセス側(B)のパイプの入口を閉じると、プロセス(A)のパイプの入口からプロセス(B)のパイプの出口へとデータが流れます。  
+3. 子プロセスを実行します。  
+4. 子プロセスの終了を待ちます。  
+5. 親プロセスを実行します。  
+
+[sample_pipe1_cmd2](https://github.com/mznmk/pipex/blob/master/srcs/sample_pipe1_cmd2.c?ts=4)  
+
+```c
+static void
+child_process(char **argv, int *fd)
+{
+	// [ set "child-side" stream ]
+	// open file: upstrem-end
+	fd_read = open(argv[1], O_RDONLY,
+				S_IRWXU | S_IRWXG | S_IRWXO);	// (1)
+	// set stream: upstream-end
+	close(fd[0]);		// (5)
+	close(STDIN_FILENO);		// (2)
+	dup2(fd_read, STDIN_FILENO);	// (3)
+	close(fd_read);		// (4)
+	// set stream: downstream-end
+	close(STDOUT_FILENO);		// (6)
+	dup2(fd[1], STDOUT_FILENO);		// (7)
+
+	// [ execute command ]
+	execlp("grep", "grep", "aa", NULL);	// (8)
+}
+```
+
+※ ファイルディスクリプターは長いので、"FD"と略します。  
+※ ファイルディスクリプターについてはこちら参照。→[what to do?](./what_to_do.md)  
+
+<プロセス２（子プロセス）>  
+1. ファイルをオープンし、FDを取得します。（便宜的にFD==3とします）  
+2. FD==0（標準入力）をクローズします。  
+3. dup2で、FD==0としてFD==3を複製します。FD==0（標準入力）からファイルにアクセスできるようになります。  
+4. FD==3（`fd_read`）をクローズします。これでFD==0（標準入力）からだけファイルにアクセスできるようになります。  
+5. パイプの出口を閉じます。（入力にパイプを使わないので）  
+6. FD==1（標準出力）をクローズします。  
+7. dup2で、FD==1（標準出力）として`fd[1]`を複製します。FD==1（標準出力）からパイプの入口にアクセスできるようになります。  
+8. `grep aa`コマンドを実行します。  
+	コマンドは標準入力からデータを取得しようとしますが、FD==0（標準入力）がファイルにマッピングされているため、ファイルからデータを取得します。  
+	コマンドは標準出力へデータを出力しようとしますが、FD==1（標準出力）がパイプの入口にマッピングされているため、パイプの入口に対してデータの出力を行います。  
+
+[sample_pipe1_cmd2](https://github.com/mznmk/pipex/blob/master/srcs/sample_pipe1_cmd2.c?ts=4)  
+```c
+static void
+parent_process(char **argv, int *fd)
+{
+	// [ set "parent-side" stream ]
+	// set stream: upstream-end
+	close(STDIN_FILENO);		// (1)
+	dup2(fd[0], STDIN_FILENO);		// (2)
+	// open file: downstream-end
+	fd_write = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC,
+				S_IRWXU | S_IRWXG | S_IRWXO);		// (3)
+	// set stream: downstream-end
+	close(fd[1]);		// (7)
+	close(STDOUT_FILENO);		// (4)
+	dup2(fd_write, STDOUT_FILENO);	// (5)
+	close(fd_write);		// (6)
+
+	// [ execute command ]
+	execlp("wc", "wc", "-w", NULL);		// (8)
+}
+```
+
+※ ファイルディスクリプターは長いので、"FD"と略します。  
+※ ファイルディスクリプターについてはこちら参照。→[what to do?](./what_to_do.md)  
+
+<プロセス１（親プロセス）>
+1. FD==0（標準入力）をクローズします。  
+2. dup2で、FD==0（標準入力）として`fd[0]`を複製します。FD==0（標準入力）からパイプの出口にアクセスできるようになります。  
+3. ファイルをオープンし、FDを取得します。（便宜的にFD==3とします）  
+4. FD==1（標準出力）をクローズします。  
+5. dup2で、FD==1（標準出力）としてFD==3を複製します。FD==1（標準出力）からファイルにアクセスできるようになります。  
+6. FD==3（`fd_write`）をクローズします。これでFD==0（標準出力）からだけファイルにアクセスできるようになります。  
+7. パイプの入口を閉じます。（出力にパイプを使わないので）  
+8. `wc -w`コマンドを実行します。  
+	コマンドは標準入力からデータを取得しようとしますが、FD==0（標準入力）がパイプの入口にマッピングされているため、パイプの入口からデータの取得を行います。  
+	コマンドは標準出力へデータを出力しようとしますが、FD==1（標準出力）がファイルにマッピングされているため、ファイルへデータを出力します。  
 
 
+## サンプルコード３(pipe==5; command==6;)
 
+最後に複数のパイプを使った処理を行ってみます。  
+６つのプロセスを５本のパイプで繋げて、プロセス同士のデータのやり取りをします。コマンドの実行回数は６回です。  
+まず、ベースとなるプロセスの入力元にファイルを繋げます。最初の５回のコマンドは、サンプルコード２のように、子プロセス・親プロセスを使ってデータのやり取りをします。最後の１回のコマンドは、プロセスの出力先にファイルを繋げてから、実行します。これで実行結果をファイルに流せます。  
 
+サンプルコード２では、プロセスが２つだけだったので、最初のプロセスの入力元にファイルを繋げ、２番目のプロセスの出力先にはファイルを繋ぎました。  
+それだとループを使ったうまい処理ができないので、ファイルの入出力は子プロセス・親プロセスの部分から独立させました。
 
-## サンプルコード３(2 < pipe; command==pipe+1;)
+実行コマンドはこちらです。  
+```sh
+./p2c3 files/infile.txt files/outfile.txt
+```
+次のコマンドと同じ挙動となります。  
+```sh
+< files/infile.txt grep aa | grep xx | grep yy | grep zz | grep bb | wc -w > files/outfile.txt
+```
 
+[sample_pipe2_cmd3](https://github.com/mznmk/pipex/blob/master/srcs/sample_pipe2_cmd3.c?ts=4)  
+```c
+int
+main(int argc, char **argv, char **envp)
+{
+	// [ declear const variable ]
+	// preset command count (1/2/3/4/5/6)
+	cmd_cnt = 6;
 
+	// [ execute command ]
+	// set stream (read stream)
+	set_read_stream(argv);
+	// execute command (0 <= cmd_num < cmd_cnt-1)
+	cmd_num = 0;
+	for (; cmd_num < cmd_cnt - 1; cmd_num++)
+	{
+		// create pipe
+		pipe(fd);
 
+		// fork process
+		pid = fork();
+		if (0 == pid)
+		{
+			// set stream (upstream-end)
+			// & execute command (0 <= cmd_num < cmd_cnt-1)
+			child_process(fd, cmd_cnt, cmd_num);
+		}
+		else if (0 < pid)
+		{
+			// set stream (downstream-end)
+			waitpid(pid, NULL, 0);
+			parent_process(fd);
+		}
+	}
+	// set stream (write stream)
+	// & execute command (cmd_num == cmd_cnt-1)
+	set_write_stream(argv, cmd_cnt, cmd_num);
+}
+```
+
+[sample_pipe2_cmd3](https://github.com/mznmk/pipex/blob/master/srcs/sample_pipe2_cmd3.c?ts=4)  
+```c
+static void
+set_read_stream(char **argv)
+{
+	// [ set stream ]
+	// open file
+	fd_read = open(argv[1], O_RDONLY,
+				S_IRWXU | S_IRWXG | S_IRWXO);
+	// set stream: upstream-end
+	close(STDIN_FILENO);
+	dup2(fd_read, STDIN_FILENO);
+	close(fd_read);
+}
+```
+
+[sample_pipe2_cmd3](https://github.com/mznmk/pipex/blob/master/srcs/sample_pipe2_cmd3.c?ts=4)  
+```c
+
+static void
+child_process(int *fd, int cmd_cnt, int cmd_num)
+{
+	// [ set "child-side" stream ]
+	// set stream: upstream-end
+	close(fd[0]);
+	// set stream: downstream-end
+	close(STDOUT_FILENO);
+	dup2(fd[1], STDOUT_FILENO);
+
+	// [ execute command ]
+	exec_comand(cmd_cnt, cmd_num);
+}
+```
+
+[sample_pipe2_cmd3](https://github.com/mznmk/pipex/blob/master/srcs/sample_pipe2_cmd3.c?ts=4)  
+```c
+static void
+parent_process(int *fd)
+{
+	// [ set "parent-side" stream ]
+	// set stream: upstream-end
+	close(STDIN_FILENO);
+	dup2(fd[0], STDIN_FILENO);
+	// set stream: downstream-end
+	close(fd[1]);
+}
+```
+
+[sample_pipe2_cmd3](https://github.com/mznmk/pipex/blob/master/srcs/sample_pipe2_cmd3.c?ts=4)  
+```c
+static void
+set_write_stream(char **argv, int cmd_cnt, int cmd_num)
+{
+	// [ set stream ]
+	// open file
+	fd_write = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC,
+					S_IRWXU | S_IRWXG | S_IRWXO);
+	// set stream: downstream-end
+	close(STDOUT_FILENO);
+	dup2(fd_write, STDOUT_FILENO);
+	close(fd_write);
+
+	// [ execute command ]
+	exec_comand(cmd_cnt, cmd_num);
+}
+```
 
 
 
