@@ -24,26 +24,26 @@
 - Level0 Projects  
 	|Project|Level |Language|Reposity|Wiki|Subject|
 	|:-----:|:----:|:------:|:------:|:--:|:-----:|
-	|libft  |Level0|C       |[public](https://github.com/mznmk/libft)|-|-|
+	|libft  |Level0|C       |[public](https://github.com/mznmk/libft)|-|[private](https://github.com/mznmk/42_Projects/tree/master/projects/libft/)|
 
 - Level1 Projects  
 	|Project      |Level      |Language|Reposity|Wiki|Subject|
 	|:-----------:|:---------:|:------:|:------:|:--:|:-----:|
 	|Netwhat      |Level1(old)|-       |[public](https://github.com/mznmk/netwhat)|-|-|
-	|Born2BeRoot  |Level1     |Shell   |-|-|-|
+	|Born2BeRoot  |Level1     |Shell   |-|-|[private](https://github.com/mznmk/42_Projects/tree/master/projects/Born2beRoot/)|
 	|get_next_line|Level1     |C       |[public(Ver1)](https://github.com/mznmk/get_next_line)<br>[public(Ver2)](https://github.com/mznmk/get_next_line_2)|[public](./documents/get_next_line)|[private](https://github.com/mznmk/42_Projects/tree/master/projects/get_next_line)|
-	|ft_printf    |Level1     |C       |[public](https://github.com/mznmk/ft_printf)|-|-|
+	|ft_printf    |Level1     |C       |[public](https://github.com/mznmk/ft_printf)|-|[private](https://github.com/mznmk/42_Projects/tree/master/projects/ft_printf/)|
 
 - Level2 Projects
 	|Project    |Level      |Language    |Reposity|Wiki|Subject|
 	|:---------:|:---------:|:----------:|:------:|:--:|:-----:|
 	|ft_server  |Level2(old)|Shell/Docker|[public](https://github.com/mznmk/ft_server)|-|-|
-	|push_swap  |Level2     |C           |[public](https://github.com/mznmk/push_swap)|-|-|
+	|push_swap  |Level2     |C           |[public](https://github.com/mznmk/push_swap)|-|[private](https://github.com/mznmk/42_Projects/tree/master/projects/push_swap/)|
 	|minitalk   |Level2     |C           |[public](https://github.com/mznmk/minitalk)|[public](./documents/minitalk/)|[private](https://github.com/mznmk/42_Projects/tree/master/projects/minitalk)|
 	|pipex      |Level2     |C      |[public](https://github.com/mznmk/pipex)|[public](./documents/pipex/)|[private](https://github.com/mznmk/42_Projects/tree/master/projects/pipex)|
-	|so_long    |Level2     |C           |-|-|-|
-	|fdf        |Level2     |C           |-|-|-|
-	|fract-ol   |Level2     |C           |-|-|-|
+	|fract-ol   |Level2     |C           |-|-|[private](https://github.com/mznmk/42_Projects/tree/master/projects/fract-ol/)|
+	|FDF        |Level2     |C           |-|-|[private](https://github.com/mznmk/42_Projects/tree/master/projects/FdF/)|
+	|so_long    |Level2     |C           |-|-|[private](https://github.com/mznmk/42_Projects/tree/master/projects/so_long/)|
 	|ExamRank 02|Level2     |C           |[private](https://github.com/mznmk/exam02)|-|-|
 
 - Level3 Projects
@@ -51,40 +51,40 @@
 	|:----------:|:---------:|:--------------:|:------:|:--:|:-----:|
 	|ft_services |Level3(old)|Shell/Docker/k8s|[public](https://github.com/mznmk/ft_services)|-|-|
 	|libasm      |Level3(old)|Assembly        |[public](https://github.com/mznmk/libasm)|-|-|
-	|Philosophers|Level3     |C               ||
-	|minishell   |Level3     |C               |-|-|-|
+	|Philosophers|Level3     |C               |-|-|[private](https://github.com/mznmk/42_Projects/tree/master/projects/Philosophers/)|
+	|minishell   |Level3     |C               |-|-|[private](https://github.com/mznmk/42_Projects/tree/master/projects/minishell/)|
 	|ExamRank 03 |Level3     |C               |[private](https://github.com/mznmk/exam03)|-|-|
 	  
 - Level4 Projects
 	|Project      |Level |Language|Reposity|Wiki|Subject|
 	|:-----------:|:----:|:------:|:------:|:--:|:-----:|
-	|NetPractice  |Level4|||
-	|cub3D        |Level4|C       |[public](https://github.com/mznmk/cub3D)|-|-|
-	|miniRT       |Level4|C       |-|-|-|
-	|CPP_Module 00|Level4|C       |[public](https://github.com/mznmk/CPP_Module)|-|-|
-	|CPP Module 01|Level4|C       ||
-	|CPP Module 02|Level4|C       ||
-	|CPP Module 03|Level4|C       ||
-	|CPP Module 04|Level4|C       ||
-	|CPP Module 05|Level4|C       ||
-	|CPP Module 06|Level4|C       ||
-	|CPP Module 07|Level4|C       ||
-	|CPP Module 08|Level4|C       ||
-	|ExamRank 04  |Level4|C       |-|*|-|
+	|NetPractice  |Level4||||[private](https://github.com/mznmk/42_Projects/tree/master/projects/NetPractice/)|
+	|cub3D        |Level4|C       |[public](https://github.com/mznmk/cub3D)|-|[private](https://github.com/mznmk/42_Projects/tree/master/projects/cub3D/)|
+	|miniRT       |Level4|C       |-|-|[private](https://github.com/mznmk/42_Projects/tree/master/projects/miniRT/)|
+	|CPP_Module 00|Level4|C++     |[public](https://github.com/mznmk/CPP_Module)|-|-|
+	|CPP Module 01|Level4|C++     |-|-|-|
+	|CPP Module 02|Level4|C++     |-|-|-|
+	|CPP Module 03|Level4|C++     |-|-|-|
+	|CPP Module 04|Level4|C++     |-|-|-|
+	|CPP Module 05|Level4|C++     |-|-|-|
+	|CPP Module 06|Level4|C++     |-|-|-|
+	|CPP Module 07|Level4|C++     |-|-|-|
+	|CPP Module 08|Level4|C++     |-|-|-|
+	|ExamRank 04  |Level4|C++     |-|-|-|
 
 - Level5 Projects
 	|Project      |Level |Language    |Reposity|Wiki|Subject|
 	|:-----------:|:----:|:----------:|:------:|:--:|:-----:|
-	|Inception    |Level5|Shell/Docker|-|-|-|
-	|ft_containers|Level5|||
-	|webserv      |Level5|||
-	|ft_irc       |Level5|||
-	|ExamRank 05  |Level5|C           |-|-|-|
+	|Inception    |Level5|Shell/Docker|-|-|[private](https://github.com/mznmk/42_Projects/tree/master/projects/Inception/)|
+	|ft_containers|Level5|C++|||[private](https://github.com/mznmk/42_Projects/tree/master/projects/ft_containers/)|
+	|webserv      |Level5|C++|||[private](https://github.com/mznmk/42_Projects/tree/master/projects/webserv/)|
+	|ft_irc       |Level5|C++|||[private](https://github.com/mznmk/42_Projects/tree/master/projects/ft_irc/)|
+	|ExamRank 05  |Level5|            |-|-|-|
 	
 - Level6 Projects
-	|Project         |Level |Language|Subject|
-	|:--------------:|:----:|:------:|:-----:|
-	|ft_transcendence|Level6|||
+	|Project         |Level |Language  |Reposity|Wiki|Subject|
+	|:--------------:|:----:|:--------:|:------:|:--:|:-----:|
+	|ft_transcendence|Level6|JS/NestJS|||[private](https://github.com/mznmk/42_Projects/tree/master/projects/ft_transcendence/)|
 
 ### Cursus (2ndCircle)
 
