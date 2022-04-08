@@ -7,17 +7,18 @@
 
 |Project  |Level  |Language|Reposity|Wiki|Subject|
 |:-------:|:-----:|:------:|:------:|:--:|:-----:|
-|Piscine  |Piscine|Shell/C |[private](https://github.com/mznmk/Piscine)|-|-|
-|ExamShell|Piscine|Shell/C |[private]()|-|-|
+|Piscine  |Piscine|Shell/C |[private](https://github.com/mznmk/Piscine)|-|[private](https://github.com/mznmk/42_Projects/tree/master/projects/Piscine/)|
+|ExamShell|Piscine|Shell/C |[private](https://github.com/mznmk/ExamShell)|-|[private](https://github.com/mznmk/42_Projects/tree/master/projects/ExamShell/)|
 
 ### Reloaded
 
-|Project         |Level   |Language|Reposity|Wiki|Subject|
-|:--------------:|:------:|:------:|:------:|:--:|:-----:|
-|Piscine_Reloaded|Reloaded|Shell/C |-|-|-|
-|hello_node      |Reloaded|JS      |[public](https://github.com/mznmk/hello_node)|-|-|
-|hello_vue       |Reloaded|JS      |[public](https://github.com/mznmk/hello_vue)|-|-|
-|libunit         |Reloaded|C       |[public](https://github.com/mznmk/libunit)|[public](./documents/libunit/)|[private](https://github.com/mznmk/42_Projects/tree/master/projects/libunit)|
+|Project        |Level   |Language|Reposity|Wiki|Subject|
+|:-------------:|:------:|:------:|:------:|:--:|:-----:|
+|PiscineReloaded|Reloaded|Shell/C |-|-|[private](https://github.com/mznmk/42_Projects/tree/master/projects/PiscineReloaded/)|
+|EvalExpr       |Reloaded|Shell/C |-|-|[private](https://github.com/mznmk/42_Projects/tree/master/projects/EvalExpr/)|
+|hello_node     |Reloaded|JS      |[public](https://github.com/mznmk/hello_node)|-|-|
+|hello_vue      |Reloaded|JS      |[public](https://github.com/mznmk/hello_vue)|-|-|
+|libunit        |Reloaded|C       |[public](https://github.com/mznmk/libunit)|[public](./documents/libunit/)|[private](https://github.com/mznmk/42_Projects/tree/master/projects/libunit)|
 
 ### Cursus (1stCircle)
 
@@ -58,18 +59,18 @@
 - Level4 Projects
 	|Project      |Level |Language|Reposity|Wiki|Subject|
 	|:-----------:|:----:|:------:|:------:|:--:|:-----:|
-	|NetPractice  |Level4||||[private](https://github.com/mznmk/42_Projects/tree/master/projects/NetPractice/)|
+	|NetPractice  |Level4|-       |-|-|[private](https://github.com/mznmk/42_Projects/tree/master/projects/NetPractice/)|
 	|cub3D        |Level4|C       |[public](https://github.com/mznmk/cub3D)|-|[private](https://github.com/mznmk/42_Projects/tree/master/projects/cub3D/)|
 	|miniRT       |Level4|C       |-|-|[private](https://github.com/mznmk/42_Projects/tree/master/projects/miniRT/)|
-	|CPP_Module 00|Level4|C++     |[public](https://github.com/mznmk/CPP_Module)|-|-|
-	|CPP Module 01|Level4|C++     |-|-|-|
-	|CPP Module 02|Level4|C++     |-|-|-|
-	|CPP Module 03|Level4|C++     |-|-|-|
-	|CPP Module 04|Level4|C++     |-|-|-|
-	|CPP Module 05|Level4|C++     |-|-|-|
-	|CPP Module 06|Level4|C++     |-|-|-|
-	|CPP Module 07|Level4|C++     |-|-|-|
-	|CPP Module 08|Level4|C++     |-|-|-|
+	|CPP_Module 00|Level4|C++     |[public](https://github.com/mznmk/CPP_Module_00)|[public](./documents/CPP_Module/CPP_Module_00/)|[private](https://github.com/mznmk/42_Projects/tree/master/projects/CPP_Module/CPP_Module_00/)|
+	|CPP Module 01|Level4|C++     |[public](https://github.com/mznmk/CPP_Module_01)|-|[private](https://github.com/mznmk/42_Projects/tree/master/projects/CPP_Module/CPP_Module_01/)|
+	|CPP Module 02|Level4|C++     |[public](https://github.com/mznmk/CPP_Module_02)|-|[private](https://github.com/mznmk/43_Projects/tree/master/projects/CPP_Module/CPP_Module_02/)|
+	|CPP Module 03|Level4|C++     |[public](https://github.com/mznmk/CPP_Module_03)|-|[private](https://github.com/mznmk/42_Projects/tree/master/projects/CPP_Module/CPP_Module_03/)|
+	|CPP Module 04|Level4|C++     |[public](https://github.com/mznmk/CPP_Module_04)|-|[private](https://github.com/mznmk/42_Projects/tree/master/projects/CPP_Module/CPP_Module_04/)|
+	|CPP Module 05|Level4|C++     |[public](https://github.com/mznmk/CPP_Module_05)|-|[private](https://github.com/mznmk/42_Projects/tree/master/projects/CPP_Module/CPP_Module_05/)|
+	|CPP Module 06|Level4|C++     |[public](https://github.com/mznmk/CPP_Module_06)|-|[private](https://github.com/mznmk/42_Projects/tree/master/projects/CPP_Module/CPP_Module_06/)|
+	|CPP Module 07|Level4|C++     |[public](https://github.com/mznmk/CPP_Module_07)|-|[private](https://github.com/mznmk/42_Projects/tree/master/projects/CPP_Module/CPP_Module_07/)|
+	|CPP Module 08|Level4|C++     |[public](https://github.com/mznmk/CPP_Module_08)|-|[private](https://github.com/mznmk/42_Projects/tree/master/projects/CPP_Module/CPP_Module_08/)|
 	|ExamRank 04  |Level4|C++     |-|-|-|
 
 - Level5 Projects
@@ -98,9 +99,10 @@
 
 ### Piscine
 
-|Project|Level|Language|Reposity|Wiki|Subject|
-|:-----:|:---:|:------:|:------:|:--:|:-----:|
-|||||||
+|Project  |Level  |Language|Reposity|Wiki|Subject|
+|:-------:|:-----:|:------:|:------:|:--:|:-----:|
+|Piscine  |Piscine|Shell/C |[private](https://github.com/mznmk/Piscine)|-|[private](https://github.com/mznmk/42_Projects/tree/master/projects/Piscine/)|
+|ExamShell|Piscine|Shell/C |[private](https://github.com/mznmk/ExamShell)|-|[private](https://github.com/mznmk/42_Projects/tree/master/projects/ExamShell/)|
 
 ### Cursus
 
