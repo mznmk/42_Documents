@@ -30,6 +30,6 @@ CPP_Module_00 now exists as Cursus CommonCore Level4 Project.
 
 ## Wiki
 
-どのように実装したか  
+実装内容について  
 [how_to_develop](./how_to_develop.md)  
 
